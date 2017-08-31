@@ -85,7 +85,7 @@
           <span aria-hidden="true">&laquo;</span>
         </a>
       </li>-->
-      <li *ngFor="let page of pagination"><a href="#" (click)="onSearch('/?page=' + page)">{{page}}</a></li>
+      <li *ngFor="let page of pagination"><a (click)="onSearch('/?page=' + page)">{{page}}</a></li>
       <!--<li>
         <a href="#" aria-label="Next">
           <span aria-hidden="true">&raquo;</span>
