@@ -1,0 +1,96 @@
+<nav class="navbar navbar-default">
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="form-group col-md-2">
+      <label for="exampleInputName2">Filter</label>
+      
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          {{form.get('filter').value}}
+          <span class="caret"></span>
+        </button>
+
+        <div *ngIf="!form.get('filter').valid" style="color: red;">
+          Obrigatório para filtrar
+        </div>
+        
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a (click)="form.get('filter').setValue('Name')">Name</a></li>
+          <li><a (click)="form.get('filter').setValue('Gender')">Gender</a></li>
+          <li><a (click)="form.get('filter').setValue('Birth Year')">Birth Year</a></li>
+          <li><a (click)="form.get('filter').setValue('Planet')">Planet</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="form-group col-md-6" [ngClass]="applyCssError('text')" >
+      <label for="exampleInputName2">Text</label>
+      <input type="text" formControlName="text" class="form-control" placeholder="Description">
+      <div *ngIf="!form.get('text').valid" style="color: red;">
+        Obrigatório para filtrar
+      </div>
+    </div>
+
+    <div class="form-group col-md-4 text-right">
+      <br>
+      <button type="button" (click)="onClean()" class="btn btn-danger">Clean</button>
+      <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Search</button>
+    </div>
+
+  </form>
+
+</nav>
+
+
+<table class="table table-striped">
+
+  <thead style="font-size: 12px;">
+
+    <tr style="background-color: #F4F4F4;">
+      <th (click)="orderBy('name')">name</th>
+      <th (click)="orderBy('eye_color')">eye_color</th>
+      <th (click)="orderBy('hair_color')">hair_color</th>
+      <th (click)="orderBy('gender')">gender</th>
+      <th (click)="orderBy('birth_year')">Birth Year</th>
+      <th></th>
+    </tr>
+
+  </thead>
+
+  <tbody>
+
+    <tr *ngFor="let item of list">
+      <td>{{item.name}}</td>
+      <td>{{item.eye_color}}</td>
+      <td>{{item.hair_color}}</td>
+      <td>{{item.gender}}</td>
+      <td>{{item.birth_year}}</td>
+      <td class="text-right">
+          <button [routerLink]="['/details', item.id]" type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+          </button>
+      </td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+<div class="text-center">
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <!--<li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>-->
+      <li *ngFor="let page of pagination"><a href="#" (click)="onSearch('/?page=' + page)">{{page}}</a></li>
+      <!--<li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>-->
+    </ul>
+  </nav>
+</div>

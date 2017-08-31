@@ -1,0 +1,65 @@
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Details</div>
+  <div class="panel-body">
+
+<!--Row 1-->
+    <div class="col-md-4">
+      <label>name:</label><br>
+      <h4>{{person.name}}</h4>
+    </div>
+
+    <div class="col-md-4">
+      <label>birth_year:</label><br>
+      <h4>{{person.birth_year}}</h4>
+    </div>
+    
+    <div class="col-md-4">
+      <label>eye_color:</label><br>
+      <h4>{{person.eye_color}}</h4>
+    </div>
+
+    <div class="col-md-12"><hr></div>
+
+<!--Row 2-->
+    <div class="col-md-4">
+      <label>hair_color:</label><br>
+      <h4>{{person.hair_color}}</h4>
+    </div>
+
+    <div class="col-md-4">
+      <label>gender:</label><br>
+      <h4>{{person.gender}}</h4>
+    </div>
+    
+    <div class="col-md-4">
+      <label>height:</label><br>
+      <h4>{{person.height}}</h4>
+    </div>
+
+    <div class="col-md-12"><hr></div>
+
+<!--Row 2-->
+    <div class="col-md-4">
+      <label>mass:</label><br>
+      <h4>{{person.mass}}</h4>
+    </div>
+
+    <div class="col-md-4">
+      <label>skin_color:</label><br>
+      <h4>{{person.skin_color}}</h4>
+    </div>
+    
+    <div class="col-md-4"></div>
+
+  </div>
+
+</div>
+
+
+<div class="list-group">
+  <a href="#" class="list-group-item active">
+      People at the same planet
+    </a>
+  <a *ngFor="let person of residents" [routerLink]="['/details', person.id]"  class="list-group-item">{{person.url}}</a>
+</div>
