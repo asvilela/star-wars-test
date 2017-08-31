@@ -97,21 +97,21 @@ module.exports = __webpack_require__.p + "glyphicons-halflings-regular.898896881
 /***/ 202:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "glyphicons-halflings-regular.e18bbf611f2a2e43afc0.ttf";
+module.exports = __webpack_require__.p + "star-wars-test/glyphicons-halflings-regular.e18bbf611f2a2e43afc0.ttf";
 
 /***/ }),
 
 /***/ 203:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "glyphicons-halflings-regular.fa2772327f55d8198301.woff";
+module.exports = __webpack_require__.p + "star-wars-test/glyphicons-halflings-regular.fa2772327f55d8198301.woff";
 
 /***/ }),
 
 /***/ 204:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "glyphicons-halflings-regular.448c34a56d699c29117a.woff2";
+module.exports = __webpack_require__.p + "star-wars-test/glyphicons-halflings-regular.448c34a56d699c29117a.woff2";
 
 /***/ }),
 
