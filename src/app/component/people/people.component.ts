@@ -35,7 +35,6 @@ export class PeopleComponent implements OnInit {
 
   onClean():void {
     this.form.reset();
-
     this.onSearch(null);
   }
 
@@ -54,13 +53,8 @@ export class PeopleComponent implements OnInit {
   onSearch(filter?: string): void {
     this.swapi.getPeople(filter)
       .subscribe((res) => {
-        console.log(res);
-
         res['results'].map(x => x.id = x.url.split('/')[5] );
-
-        this.pagination = Array.apply(null, {length: Math.ceil(res.count/10)}).map((x,y) => { return y + 1 });
-      
-
+        this.pagination = Array.apply(null, {length: Math.ceil(res.count/10)}).map((x,y) => { return y + 1 });    
         this.list = <Person[]>res['results'];
       });
   }

@@ -12,7 +12,7 @@ import { SwapiService } from './../../services/swapi.service';
 })
 export class DetailsComponent implements OnInit {
 
-  person: any;
+  person: Person = new Person();
   residents: any[] = [];
   inscription: Subscription;
 
@@ -35,8 +35,6 @@ export class DetailsComponent implements OnInit {
 
       this.swapi.getPeople(filter)
       .subscribe(res => {
-
-        console.log(res);        
         this.person = res as Person;
 
         // Get people at the same planet
@@ -44,9 +42,6 @@ export class DetailsComponent implements OnInit {
 
         this.swapi.getResidents(filter)
           .subscribe(res => {
-            
-            console.log(res);
-
             this.residents = res['residents'].map(x => {
               return { id: x.split('/')[5], url: x }
             });

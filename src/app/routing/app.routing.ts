@@ -1,5 +1,5 @@
 import { ModuleWithProviders } from '@angular/core';
-import { Component } from '@angular/core';
+// import { Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { DetailsComponent } from './../component/details/details.component';

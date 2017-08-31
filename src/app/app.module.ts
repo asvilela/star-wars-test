@@ -3,7 +3,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './app.component';
 import { DetailsComponent } from './component/details/details.component';
 import { PeopleComponent } from './component/people/people.component';
