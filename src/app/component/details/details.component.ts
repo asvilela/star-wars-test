@@ -55,8 +55,10 @@ export class DetailsComponent implements OnInit {
       });
       
     });
+  }
 
-    
+  ngOnDestroy() {
+    this.inscription.unsubscribe();
   }
 
 }
